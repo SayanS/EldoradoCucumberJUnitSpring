@@ -13,9 +13,6 @@ import java.util.List;
 public class HeaderSteps {
     @Autowired
     Header header;
-    @Autowired
-    public HeaderSteps(){
-    }
 
     public void isCityDisplayedInHeaderMenu(String itemName) {
         if(header.waitForTextToBePresentIn(header.SELECTED_CITY, itemName,5)!=null) {

@@ -5,14 +5,8 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 import org.springframework.stereotype.Component;
 
-//@ContextConfiguration(locations = {"/spring.xml"})
 @RunWith(Cucumber.class)
-//@CucumberOptions(plugin = {"pretty"})
-@CucumberOptions(features = {"src/test/resources/features"}
-//        plugin ={"html:target/cucumber-html-report",
-//        "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
-//        "usage:target/cucumber-usage.json", "junit:target/cucumber-results.xml" })
-)
+@CucumberOptions(features = {"src/test/resources/features"})
 @Component
 public class RunCukesTest {
 }

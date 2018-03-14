@@ -15,5 +15,4 @@ public class SelectCityPopUp extends BasePage {
       return getTextValuesOf(CONTEXT_CITIES);
     }
 
-
 }

@@ -4,11 +4,17 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import models.Browser;
+import org.junit.Rule;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.beans.factory.annotation.Autowired;
+import ru.yandex.qatools.allure.annotations.Attachment;
 
 import java.io.File;
 import java.util.HashMap;
@@ -16,10 +22,6 @@ import java.util.HashMap;
 public class Hooks {
     @Autowired
     private Browser browser;
-//    @Autowired
-//    public Hooks(Browser browser){
-//        this.browser=browser;
-//    }
 
     @Before
     public void setUp(Scenario scenario){
@@ -35,7 +37,7 @@ public class Hooks {
         options.addArguments("--start-maximized");
 
         ChromeDriverService service = new ChromeDriverService.Builder()
-                .usingDriverExecutable(new File("./src/test/resources/webdrivers/chromedriver"))
+                .usingDriverExecutable(new File("./src/test/resources/webdrivers/chromedriver.exe"))
                 .usingAnyFreePort()
                 .build();
 
