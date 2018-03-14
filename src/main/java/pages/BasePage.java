@@ -16,21 +16,23 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 @Component
 public abstract class BasePage {
-    private WebDriver webDriver;
     @Autowired
     private Browser browser;
 
+    public WebDriver getWebDriver(){
+        return  browser.webDriver;
+    }
 
     protected WebElement findBy(String xpath) {
-        return webDriver.findElement(By.xpath(xpath));
+        return getWebDriver().findElement(By.xpath(xpath));
     }
 
     protected WebElement find(By byXpath) {
-        return webDriver.findElement(byXpath);
+        return getWebDriver().findElement(byXpath);
     }
 
     protected List<WebElement> findAllBy(String xpath){
-        return webDriver.findElements(By.xpath(xpath));
+        return getWebDriver().findElements(By.xpath(xpath));
     }
 
     protected List<String> getTextValuesFrom(List<WebElement> webElements){
@@ -54,20 +56,20 @@ public abstract class BasePage {
     }
 
     public void clickOnByXpathJS(String xpath) {
-        ((JavascriptExecutor) webDriver).executeScript("arguments[0].click();", findBy(xpath));
+        ((JavascriptExecutor) getWebDriver()).executeScript("arguments[0].click();", findBy(xpath));
     }
 
     public void scrollIntoView(String xpath, int offset_y) {
-        int y = webDriver.findElement(By.xpath(xpath)).getLocation().getY() + offset_y;
-        ((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, " + y + ")");
+        int y =getWebDriver().findElement(By.xpath(xpath)).getLocation().getY() + offset_y;
+        ((JavascriptExecutor) getWebDriver()).executeScript("window.scrollTo(0, " + y + ")");
     }
 
     public void scrollIntoView(String xpath) {
-        ((JavascriptExecutor) webDriver).executeScript("window.scrollTo(0, 0)");
+        ((JavascriptExecutor) getWebDriver()).executeScript("arguments[0].scrollIntoView(true);", getWebDriver().findElement(By.xpath(xpath)));
     }
 
     protected WebElement moveTo(String xpath){
-        Actions actions=new Actions(webDriver);
+        Actions actions=new Actions(getWebDriver());
         actions.moveToElement(findBy(xpath)).perform();
         return  findBy(xpath);
     }
@@ -86,7 +88,7 @@ public abstract class BasePage {
 
     protected <V> V waitFor(Function<? super WebDriver,V> condition, TimeUnit timeUnit, int timeout){
         try {
-            Wait<WebDriver> wait = new FluentWait<WebDriver>(webDriver).withTimeout(timeout, timeUnit)
+            Wait<WebDriver> wait = new FluentWait<WebDriver>(getWebDriver()).withTimeout(timeout, timeUnit)
                     .ignoring(NoSuchElementException.class)
                     .ignoring(StaleElementReferenceException.class).
                             pollingEvery(500, TimeUnit.MILLISECONDS);

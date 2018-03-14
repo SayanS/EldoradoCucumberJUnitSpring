@@ -2,7 +2,7 @@ package models;
 
 import java.util.HashSet;
 import java.util.Set;
-
+//@Component
 public class User {
     private String login;
     private String password;

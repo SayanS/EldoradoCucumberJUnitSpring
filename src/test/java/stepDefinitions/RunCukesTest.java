@@ -4,9 +4,8 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 import org.springframework.stereotype.Component;
-import org.springframework.test.context.ContextConfiguration;
 
-@ContextConfiguration(locations = {"/spring.xml"})
+//@ContextConfiguration(locations = {"/spring.xml"})
 @RunWith(Cucumber.class)
 //@CucumberOptions(plugin = {"pretty"})
 @CucumberOptions(features = {"src/test/resources/features"}

@@ -1,5 +1,6 @@
 package models;
 
+//@Component
 public class SearchProductAutoSuggestLine {
     private String imgLink;
     private String productName;

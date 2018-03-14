@@ -1,15 +1,9 @@
 package pages;
 
-import models.Browser;
-import org.openqa.selenium.WebDriver;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Header extends BasePage {
-    @Autowired
-    private Browser browser;
-    private WebDriver webDriver;
 
     public final String SEARCH_FIELD=".//div[@class='header-content desktop-header']//input";
     public final String SELECTED_CITY=".//ul[@class='header-navigation']/li/div/span";

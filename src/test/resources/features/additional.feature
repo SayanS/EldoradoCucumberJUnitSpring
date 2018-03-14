@@ -1,6 +1,5 @@
 Feature: 1Global Search functionality
 
-  @ignore
   Scenario Outline: 1Search by product name
     Given Home page is opened
     Given User credentials
