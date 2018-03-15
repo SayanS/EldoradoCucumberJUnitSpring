@@ -10,3 +10,4 @@ Feature: 1Global Search functionality
     Examples:
       | product name |
       | телевизор    |
+      | телефон      |
