@@ -1,6 +1,5 @@
 Feature: Global Search functionality
 
-  @ignore
   Scenario Outline: Test experiments
     Given Home page is opened
     Given User credentials
@@ -12,14 +11,13 @@ Feature: Global Search functionality
       | product name |
       | телевизор    |
 
-  @ignore
   Scenario: Check that first product name from the Autosuggest list equal to Search product
     Given Home page is opened
     Given Click on "Да" button of Select city pop-up
     When Enter "Телевизор TOSHIBA 49U7750EV" into Global Search field
     Then First item of the Autosuggest list of the Header Search should be
-      | imgLink                                              | productName                 | oldPrice | price    |
-      | https://i.eldorado.ua//55x55//goods/5477/5477164.jpg | Телевизор TOSHIBA 49U7750EV |          | 16999 .- |
+      | imgLink                                            | productName                 | oldPrice | price    |
+      | https://eldorado.ua//55x55//goods/5477/5477164.jpg | Телевизор TOSHIBA 49U7750EV |          | 16999 .- |
 
   Scenario: Check that all Products description in Search results contains Searching text
     Given Home page is opened
