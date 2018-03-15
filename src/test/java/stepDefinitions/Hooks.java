@@ -52,16 +52,16 @@ public class Hooks {
 
     @After
     public void tearDown(Scenario scenario){
-//        if (scenario.isFailed()) {
-//            makeScreenshot();
-//        }
+        if (scenario.isFailed()) {
+            makeScreenshot();
+        }
         browser.webDriver.quit();
     }
 
-//    @Attachment(value = "Page screenshot", type = "image/png")
-//    private byte[] makeScreenshot() {
-//        return (((TakesScreenshot) browser.webDriver).getScreenshotAs(OutputType.BYTES));
-//    }
+    @Attachment(value = "Page screenshot", type = "image/png")
+    private byte[] makeScreenshot() {
+        return (((TakesScreenshot) browser.webDriver).getScreenshotAs(OutputType.BYTES));
+    }
 
 
 }
