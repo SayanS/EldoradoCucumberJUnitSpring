@@ -4,14 +4,11 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import models.Browser;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.beans.factory.annotation.Autowired;
-import ru.yandex.qatools.allure.annotations.Attachment;
 
 import java.io.File;
 import java.util.HashMap;
@@ -53,16 +50,16 @@ public class Hooks {
 
     @After
     public void tearDown(Scenario scenario){
-        if (scenario.isFailed()) {
-            makeScreenshot();
-        }
+//        if (scenario.isFailed()) {
+//            makeScreenshot();
+//        }
         browser.webDriver.quit();
     }
 
-    @Attachment(value = "Page screenshot", type = "image/png")
-    private byte[] makeScreenshot() {
-        return (((TakesScreenshot) browser.webDriver).getScreenshotAs(OutputType.BYTES));
-    }
+//    @Attachment(value = "Page screenshot", type = "image/png")
+//    private byte[] makeScreenshot() {
+//        return (((TakesScreenshot) browser.webDriver).getScreenshotAs(OutputType.BYTES));
+//    }
 
 
 }

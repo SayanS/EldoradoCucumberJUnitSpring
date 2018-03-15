@@ -1,3 +1,4 @@
+@Ignore
 Feature: Global Search functionality
 
   Scenario Outline: Test experiments
