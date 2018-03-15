@@ -49,10 +49,19 @@ public class Hooks {
         System.out.println(scenario.getName());
       //  browser.webDriver.manage().window().maximize();
     }
+
     @After
     public void tearDown(Scenario scenario){
+//        if (scenario.isFailed()) {
+//            makeScreenshot();
+//        }
         browser.webDriver.quit();
     }
+
+//    @Attachment(value = "Page screenshot", type = "image/png")
+//    private byte[] makeScreenshot() {
+//        return (((TakesScreenshot) browser.webDriver).getScreenshotAs(OutputType.BYTES));
+//    }
 
 
 }
