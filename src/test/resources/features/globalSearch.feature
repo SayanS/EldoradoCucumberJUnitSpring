@@ -27,24 +27,24 @@ Feature: Global Search functionality
     When Click on Show All button on Autosuggest list
     Then All descriptions of the products in Search results should contain "телевизор"
 
-#  @ignore
-#  Scenario Outline: Check Search city
-#    Given Home page is opened
-#    When Click on "Нет" button of Select city pop-up
-#    When Enter "<text>" into City name field on Select city pop-up
-#    Then Each context city on Select city pop-up should start with "<text>"
-#    Examples:
-#      | text    |
-#      | П       |
-#      | Харьков |
-#
-#  @ignore
-#  Scenario: Check ability to select default city
-#    Given Home page is opened
-#    When Click on "Нет" button of Select city pop-up
-#    When Select city "Харьков" on Select city pop-up
-#    Then Selected city "Харьков" should be displayed in Header menu
-#    Then Notification message "Город изменен на Харьков" should be displayed
+  @ignore
+  Scenario Outline: Check Search city
+    Given Home page is opened
+    When Click on "Нет" button of Select city pop-up
+    When Enter "<text>" into City name field on Select city pop-up
+    Then Each context city on Select city pop-up should start with "<text>"
+    Examples:
+      | text    |
+      | П       |
+      | Харьков |
+
+  @ignore
+  Scenario: Check ability to select default city
+    Given Home page is opened
+    When Click on "Нет" button of Select city pop-up
+    When Select city "Харьков" on Select city pop-up
+    Then Selected city "Харьков" should be displayed in Header menu
+    Then Notification message "Город изменен на Харьков" should be displayed
 
 
 

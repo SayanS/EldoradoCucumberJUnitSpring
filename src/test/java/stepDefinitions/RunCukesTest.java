@@ -7,6 +7,6 @@ import org.springframework.stereotype.Component;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {"src/test/resources/features"})
-@Component
+//@Component
 public class RunCukesTest {
 }
