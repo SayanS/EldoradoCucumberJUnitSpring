@@ -33,12 +33,12 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>junit</groupId>-->
+            <!--<artifactId>junit</artifactId>-->
+            <!--<version>4.12</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
@@ -54,12 +54,12 @@
             <version>3.8.1</version>
         </dependency>
 
-         <!--https://mvnrepository.com/artifact/info.cukes/cucumber-picocontainer-->
+        <!--https://mvnrepository.com/artifact/info.cukes/cucumber-picocontainer-->
         <!--<dependency>-->
-            <!--<groupId>info.cukes</groupId>-->
-            <!--<artifactId>cucumber-picocontainer</artifactId>-->
-            <!--<version>1.2.5</version>-->
-            <!--<scope>test</scope>-->
+        <!--<groupId>info.cukes</groupId>-->
+        <!--<artifactId>cucumber-picocontainer</artifactId>-->
+        <!--<version>1.2.5</version>-->
+        <!--<scope>test</scope>-->
         <!--</dependency>-->
 
         <dependency>
@@ -124,11 +124,6 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
         </dependency>
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>1.2.5</version>
-        </dependency>
 
 
     </dependencies>
@@ -186,7 +181,7 @@
                 <artifactId>allure-maven-plugin</artifactId>
                 <version>2.5</version>
                 <configuration>
-                    <resultsDirectory>${project.build.directory}/target/allure-results</resultsDirectory>
+                    <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
                 </configuration>
             </plugin>
 
@@ -203,10 +198,10 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${project.build.directory}/target/allure-results</outputDirectory>
+                            <outputDirectory>${project.build.directory}/allure-results</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>src/test/resources</directory>
+                                    <directory>/src/test/resources</directory>
                                     <filtering>true</filtering>
                                 </resource>
                             </resources>
@@ -218,7 +213,6 @@
 
         </plugins>
     </build>
-
 
     <reporting>
         <excludeDefaults>true</excludeDefaults>
